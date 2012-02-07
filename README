@@ -1,0 +1,18 @@
+This plugin is designed to overcome one thing:
+
+Getting the image data from images you own, into a canvas on a server not on the same domain as the image host.
+This is only an issue when your image host doesn't support CORS.  Amazon s3 does not support CORS, so if you have any
+volume of images you need some way to get at this data.
+
+This plugin requires a little work.
+
+On your image host - In my case s3:
+copy the files in the /s3 folder onto your s3 image host, in the directory where your images live
+
+In your application:
+
+include the plugin, and you can now do this
+
+$("img")s3ImageProxy(s3remote:"https://s3.amazonaws.com/bucket/path/to/image/directory")
+
+Now, on every image you performed the proxy on, the original src attribute will be replaced with the actual data bytes.
