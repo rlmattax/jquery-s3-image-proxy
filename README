@@ -16,3 +16,8 @@ include the plugin, and you can now do this
 $("img")s3ImageProxy(s3remote:"https://s3.amazonaws.com/bucket/path/to/image/directory")
 
 Now, on every image you performed the proxy on, the original src attribute will be replaced with the actual data bytes.
+
+Many thanks Irina Dumitrascu
+https://github.com/dira/cross-domain-image-proxy
+Most of the proxy code came from here, I just wrapped it in a jquery plugin so I could use it the way I wanted to and
+made some changes to be able to track the individual proxy requests.
